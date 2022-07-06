@@ -4,7 +4,10 @@ import { addTodo, editTodo, removeTodo } from './todo.actions';
 
 export const TODO_KEY = 'todo';
 
-export const initialState: ITodo[] = [];
+export const initialState: ITodo[] = [
+  {id: 1, title: 'first'},
+  {id: 2, title: 'second'},
+];
 
 export const todoReducer = createReducer(
   initialState,
