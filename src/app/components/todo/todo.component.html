@@ -1,0 +1,12 @@
+<div class="container">
+  <input [(ngModel)]="title" type="text" placeholder="Enter a new task...">
+  <button (click)="addTodo()">Add</button>
+</div>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let todo of todos$ | async">
+      {{todo.title}}
+    </li>
+  </ul>
+</div>
