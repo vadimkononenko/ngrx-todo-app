@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { TodoService } from '../../services/todo.service';
+import { ITodo } from '../../model/todo';
 
 @Component({
   selector: 'todo',
@@ -8,8 +10,21 @@ import { Component, Input } from '@angular/core';
 export class TodoComponent {
 
   @Input()
-  todoTitle: string = '';
+  todo: ITodo = {
+    id: 0,
+    title: ''
+  };
 
-  constructor() {}
+  constructor(private todoService: TodoService) {}
+
+  editTodo() {
+    // const newTodo = {
+    //   id: 1,
+    //   title: 'modified todo'
+    // };
+    // this.todoService.editTodo(newTodo);
+  }
+
+  deleteTodo() {}
 
 }

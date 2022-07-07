@@ -1,1 +1,5 @@
-<p>{{todoTitle}}</p>
+<div class="todo-item">
+  <p>{{todo.title}}</p>
+  <button (click)="editTodo()">edit</button>
+  <button (click)="deleteTodo()">delete</button>
+</div>
