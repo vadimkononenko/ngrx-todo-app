@@ -10,7 +10,7 @@ import { TodoComponent } from '../todo/todo.component';
 export class EditModalComponent {
 
   constructor(
-    private dialogRef: MatDialogRef<TodoComponent>,
+    private modalRef: MatDialogRef<TodoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: {
       modifiedTitle: string
     }

@@ -12,8 +12,11 @@ import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
 })
 export class TodoComponent {
 
-  // receive this field from edit-modal
-  modifiedTitle = '';
+  // from edit-modal
+  modifiedTitle: string = '';
+
+  // from delete-modal
+  isRemove: boolean = false;
 
   @Input()
   todo: ITodo = {
@@ -23,29 +26,39 @@ export class TodoComponent {
 
   constructor(
     private todoService: TodoService,
-    private dialog: MatDialog
+    private modal: MatDialog
   ) {}
 
-  openEditDialog() {
-    const dialogRef = this.dialog.open(EditModalComponent, {
+  openEditModal() {
+    const modalEditRef = this.modal.open(EditModalComponent, {
       width: '400px',
-      height: '300px',
+      height: '400px',
       data: {
         modifiedTitle: this.modifiedTitle
       }
     });
-    dialogRef.afterClosed().subscribe(title => {
+    modalEditRef.afterClosed().subscribe(title => {
       this.modifiedTitle = title;
-      this.edit();
+      this.updateTodo();
     });
   }
 
-  // TODO: finish delete modal
-  openDeleteDialog() {
-    this.dialog.open(DeleteModalComponent);
+  openRemoveModal() {
+    const modalDeleteRef = this.modal.open(DeleteModalComponent, {
+      width: '400px',
+      height: '400px',
+      data: {
+        isRemove: this.isRemove,
+        title: this.todo.title
+      }
+    });
+    modalDeleteRef.afterClosed().subscribe(result => {
+      this.isRemove = result;
+      this.removeTodo();
+    })
   }
 
-  edit() {
+  updateTodo() {
     if(this.modifiedTitle) {
       const newTodo: ITodo = {
         id: this.todo.id,
@@ -55,7 +68,10 @@ export class TodoComponent {
     }
   }
 
-  // TODO: finish delete method
-  delete() {}
+  removeTodo() {
+    if(this.isRemove) {
+      this.todoService.removeTodo(this.todo);
+    }
+  }
 
 }

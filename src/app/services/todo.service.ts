@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ITodo } from '../model/todo';
-import { addTodo, editTodo } from '../reducers/todo/todo.actions';
+import { addTodo, editTodo, removeTodo } from '../reducers/todo/todo.actions';
 import { Observable } from 'rxjs';
 import { todosSelector } from '../reducers/todo/todo.reducer';
 
@@ -32,5 +32,9 @@ export class TodoService {
 
   editTodo(newTodo: ITodo) {
     this.store.dispatch(editTodo(newTodo));
+  }
+
+  removeTodo(todo: ITodo) {
+    this.store.dispatch(removeTodo(todo));
   }
 }

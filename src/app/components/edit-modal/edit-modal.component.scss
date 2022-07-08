@@ -1,0 +1,13 @@
+.container {
+  margin-top: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  .input-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
