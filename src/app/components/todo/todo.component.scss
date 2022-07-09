@@ -1,14 +1,50 @@
 .todo-item {
+  box-sizing: border-box;
   margin-top: 10px;
-  width: 300px;
+  width: 400px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 0;
+
+  p {
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+  }
 
   .buttons {
-    width: 100px;
+    width: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    #edit-button {
+      width: 50px;
+      height: 30px;
+      border: solid 1px #eab23d;
+      border-radius: 5px;
+      color: #eab23d;
+      background: #fff;
+
+      &:hover {
+        background: #fff4db;
+        cursor: pointer;
+      }
+    }
+
+    #delete-button {
+      width: 60px;
+      height: 30px;
+      border: solid 1px #fe1818;
+      border-radius: 5px;
+      color: #fe1818;
+      background: #fff;
+
+      &:hover {
+        background: #ffe0e0;
+        cursor: pointer;
+      }
+    }
   }
 }
