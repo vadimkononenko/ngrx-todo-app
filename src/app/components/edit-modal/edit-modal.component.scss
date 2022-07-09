@@ -1,13 +1,46 @@
-.container {
-  margin-top: 35%;
+.edit-modal {
+  height: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 
   .input-form {
+    width: 300px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+    input {
+      display: block;
+      padding: 0 15px;
+      width: 170px;
+      height: 35px;
+      font-family: inherit;
+      font-size: 16px;
+      color: #212529;
+      background-color: #fff;
+      border: 1px solid #eab23d;
+      border-radius: 5px;
+      outline: none;
+
+      &::placeholder {
+        color: #eab23d;
+      }
+    }
+
+    button {
+      width: 60px;
+      height: 38px;
+      border: solid 1px #eab23d;
+      border-radius: 5px;
+      color: #eab23d;
+      background: #fff;
+
+      &:hover {
+        background: #fff4db;
+        cursor: pointer;
+      }
+    }
   }
 }

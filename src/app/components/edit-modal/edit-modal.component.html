@@ -1,8 +1,8 @@
-<div class="container">
+<div class="edit-modal">
   <h2>Change todo</h2>
 
   <div class="input-form">
-    <input [(ngModel)]="data.modifiedTitle" type="text">
+    <input [(ngModel)]="data.modifiedTitle" placeholder="Type a new todo..." type="text">
     <button [mat-dialog-close]="data.modifiedTitle">Change</button>
   </div>
 </div>

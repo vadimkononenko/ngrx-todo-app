@@ -5,8 +5,7 @@ import { addTodo, editTodo, removeTodo } from './todo.actions';
 export const TODO_KEY = 'todo';
 
 export const initialState: ITodo[] = [
-  {id: 1, title: 'first'},
-  {id: 2, title: 'second'},
+  {id: 0, title: 'example todo'}
 ];
 
 export const todoReducer = createReducer(

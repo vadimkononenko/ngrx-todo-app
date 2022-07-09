@@ -1,5 +1,5 @@
 .container {
-  margin-top: 35%;
+  height: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,5 +11,33 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    #cancel-button {
+      width: 80px;
+      height: 38px;
+      border: solid 1px #fe1818;
+      border-radius: 5px;
+      color: #fe1818;
+      background: #fff;
+
+      &:hover {
+        background: #ffe0e0;
+        cursor: pointer;
+      }
+    }
+
+    #confirm-button {
+      width: 80px;
+      height: 38px;
+      border: solid 1px #3baa1c;
+      border-radius: 5px;
+      color: #3baa1c;
+      background: #fff;
+
+      &:hover {
+        background: #e2ffdf;
+        cursor: pointer;
+      }
+    }
   }
 }
